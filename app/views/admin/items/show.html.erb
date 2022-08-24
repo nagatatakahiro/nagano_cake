@@ -24,7 +24,7 @@
 
     <tr>
         <th>販売ステータス</th>
-        <td><%= @item.is_active %></td>
+        <td><%= @item.status_text %></td>
     </tr>
     </table>
     <%= link_to "編集する", edit_admin_item_path(@item) %>
