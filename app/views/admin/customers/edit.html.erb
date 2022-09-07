@@ -1,2 +1,41 @@
-<h1>Admin::Customers#edit</h1>
-<p>Find me in app/views/admin/customers/edit.html.erb</p>
+<h1><%= customer.first_name %>さんの会員情報編集</h1>
+<%= form_with model: @customer, url: admin_customer_path(@customer) do |f| %>
+
+    <div class="form-group has-icon">
+      <%= f.label :id, "会員ID" %><br />
+      <%= f.id %>
+
+    </div>
+    <div class="form-group has-icon">
+      <%= f.label :full_name, "氏名" %>
+      <%= f.text_field :full_name %>
+    </div>
+    <div class="form-group has-icon">
+      <%= f.label :full_name_kana, "フリガナ" %>
+      <%= f.text_field :fullname_kana %>
+
+    </div>
+    <div class="form-group has-icon">
+      <%= f.label :postal_code, "郵便番号" %>
+      <%= f.text_field :postal_code %>
+
+    </div>
+    <div class="form-group has-icon">
+      <%= f.label :address, "住所" %>
+      <%= f.text_field :address %>
+
+    </div>
+    <div class="form-group has-icon">
+      <%= f.label :telephone_number, "電話番号" %>
+      <%= f.text_field :telephone_number %>
+
+    </div>
+    <div class="form-group has-icon">
+      <%= f.radio_button :is_active, :on_sale %>
+  　  　 <%= f.label :is_active,"有効", {value: :true, style: "display: inline-block;"} %>
+  　　 <%= f.radio_button :is_active, :off_sale %>
+  　　 <%= f.label :is_active, "無効", {value: :false, style: "display: inline-block;"} %>
+
+    </div>
+    <%= f.submit "変更を保存", class:"btn btn-primary btn-block btn-base-1 mt-20" %>
+  <% end %>
