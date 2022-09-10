@@ -2,6 +2,38 @@
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= render "public/shared/error_messages", resource: resource %>
+  <b>名前(漢字)</b>
+  <div class="field mt-2">
+    <%= f.label :first_name, "(姓)" %>
+    <%= f.text_field :first_name, autofocus: true, autocomplete: "first_name" %>
+
+    <%= f.label :last_name, "(名)" %>
+    <%= f.text_field :last_name, autofocus: true, autocomplete: "last_name" %>
+  </div>
+
+  <b>名前(フリガナ)</b>
+  <div class="field mt-2">
+    <%= f.label :first_name_kana, "(セイ)" %>
+    <%= f.text_field :first_name_kana, autofocus: true, autocomplete: "first_name" %>
+
+    <%= f.label :last_name_kana, "(メイ)" %>
+    <%= f.text_field :last_name_kana, autofocus: true, autocomplete: "last_name" %>
+  </div>
+  <div class="field mt-3">
+    <%= f.label :postal_code, "郵便番号(ハイフン無し)", style:"font-weight:bold" %><br />
+    <%= f.text_field :postal_code, autofocus: true, autocomplete: "email" %>
+  </div>
+
+  <div class="field mt-3">
+    <%= f.label :address, "住所", style:"font-weight:bold" %><br />
+    <%= f.text_field :address, autofocus: true, autocomplete: "email" %>
+  </div>
+
+  <div class="field mt-3">
+    <%= f.label :telephone_number, "電話番号(ハイフン無し)", style:"font-weight:bold" %><br />
+    <%= f.text_field :telephone_number, autofocus: true, autocomplete: "email" %>
+  </div>
+
 
   <div class="field">
     <%= f.label :email %><br />
