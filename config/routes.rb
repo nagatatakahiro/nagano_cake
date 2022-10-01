@@ -2,8 +2,16 @@ Rails.application.routes.draw do
 
 
   namespace :public do
+    get 'customers/show'
+    get 'customers/edit'
+  end
+  namespace :public do
     get 'homes/top'
     get 'homes/about'
+  end
+   namespace :public do
+    get 'addresses/index'
+    get 'addresses/edit'
   end
   devise_for :customers, controllers: {
   registrations: "public/registrations",
